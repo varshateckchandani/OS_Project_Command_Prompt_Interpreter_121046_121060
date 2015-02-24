@@ -1,8 +1,8 @@
-Command Line Interpreter
-Operating Systems Lab Project
+				           Command Line Interpreter
+					Operating Systems Lab Project
 
-								121046 Saumya Shah
-								121060 Varsha Teckchandani
+											121046 Saumya Shah
+											121060 Varsha Teckchandani
 
 Project overview
 
@@ -15,7 +15,7 @@ Abstract
 1. Batch and Interactive execution
 
 Batch execution involves execution of all the commands in the batch file 
-For example: If we run a shell script which has a set of commands then all those commands should be serially executed. Say running shell [Batch_file_name] will execute the commands in the file “Batch_file_name” until it sees the exit command.
+For example: If we run a shell script which has a set of commands then all those commands should be serially executed. Say running shell [Batch_file_name] will execute the commands in the file â€œBatch_file_nameâ€ until it sees the exit command.
 Interactive mode is something similar to the terminal that we use. An interactive console that will allow us to run commands just as one does on the command prompt. Also we need to show proper error messages as and when required. The exit command concept holds in this case too. 
 
 2. Built in commands
@@ -33,7 +33,7 @@ Hello
 Bye
 
 4. & separator
-In addition, programs can be launched asynchronously with the "&" separator. This causes the all preceding commands since the beginning of the line or the last '&' operator to execute without waiting for the result. This should be implemented by calling fork() and then executing all the commands since the previous "&" separator in sequence.
+In addition, programs can be launched asynchronously with the "&" separator.Â This causes the all preceding commands since the beginning of the line or the last '&' operator to execute without waiting for the result. This should be implemented by calling fork() and then executing all the commands since the previous "&" separator in sequence.
 For example:
 	 > ls -l & 
         > echo Hello
