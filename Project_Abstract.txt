@@ -4,13 +4,13 @@
 											121046 Saumya Shah
 											121060 Varsha Teckchandani
 
-Project overview
+Project overview:
 
 Command line interpreter or shell. The shell should operate in this basic way: when one type in a command (in response to its prompt), the shell creates a child process that executes the command entered and then prompts for more user input when it has finished.
 The shells student implement will be similar to, but much simpler than, the one run every day in Linux. They can find out which shell; they are running by typing echo $SHELL at a prompt. For this project, one do not need to implement much functionality; but one will need to be able to handle running multiple commands simultaneously.
 This shell can be run in two ways: interactive and batch.
 
-Abstract
+Abstract:
 
 1. Batch and Interactive execution
 
