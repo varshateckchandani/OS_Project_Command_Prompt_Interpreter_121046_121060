@@ -1,0 +1,61 @@
+ Command Line Interpreter
+					Operating Systems Lab Project
+
+											121046 Saumya Shah
+											121060 Varsha Teckchandani
+
+Project overview:
+
+Command line interpreter or shell. The shell should operate in this basic way: when one type in a command (in response to its prompt), the shell creates a child process that executes the command entered and then prompts for more user input when it has finished.
+The shells student implement will be similar to, but much simpler than, the one run every day in Linux. They can find out which shell; they are running by typing echo $SHELL at a prompt. For this project, one do not need to implement much functionality; but one will need to be able to handle running multiple commands simultaneously.
+This shell can be run in two ways: interactive and batch.
+
+
+What we have done till today:
+
+We read about message parsing, and system calls. Based on that we implemented a few codes. They are attached in the folder. 
+They are described as follows :
+	1. Listing1.c
+		It shows the execution of “ls” command using the execve() system call.
+	2. Listing2.c
+		In this we have tried to input the command from the shell itself. Also, when we input Ctrl+c, the shell terminates. This is done 		using the system signal handlers like SIGINT, SIG_IGN. 
+	3. Listing3.c 
+		In this, when we enter Ctrl+c, it handles it just like a normal input and it doesn’t terminate the shell. 
+	4. My_Shell.c
+		Implementation of basic shell functions. When this code is compiled and run it enters into our own shell and one can fire commands 		like echo, ls, cat, etc and it works similar to the original command prompt
+
+
+While using the execve() system call function, the current process image is transferred to a new image, and a new process is made for the system call. Only if the system call fails, it returns to the original program else, the program terminates. 
+We will have to read more about the system calls and handling the child process and the process id via fork() call to overcome the problem hence enabling interactive shell. 
+
+
+What we plan to do next :
+
+
+1. Batch and Interactive execution
+
+Batch execution involves execution of all the commands in the batch file 
+For example: If we run a shell script which has a set of commands then all those commands should be serially executed. Say running shell [Batch_file_name] will execute the commands in the file “Batch_file_name” until it sees the exit command.
+Interactive mode is something similar to the terminal that we use. An interactive console that will allow us to run commands just as one does on the command prompt. Also we need to show proper error messages as and when required. The exit command concept holds in this case too. 
+
+2. Built in commands
+
+We will be implementing the basic unix built-in commands such as cd, exit, echo etc
+
+3. Running multiple commands at a time
+
+Multiple commands execution should be permitted separated by a special character for example; 
+Next command should be executed only when the previous one is executed successfully for example 
+
+> echo Hello; echo Bye
+This will execute both commands. Output will be 
+Hello
+Bye
+
+4. & separator
+In addition, programs can be launched asynchronously with the "&" separator. This causes the all preceding commands since the beginning of the line or the last '&' operator to execute without waiting for the result. This should be implemented by calling fork() and then executing all the commands since the previous "&" separator in sequence.
+For example:
+	 > ls -l & 
+        > echo Hello
+
+will execute "echo Hello" without waiting for "ls -l" to complete.
